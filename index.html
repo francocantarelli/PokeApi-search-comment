@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="poke_colors.css" />
+
+    <!-- fonts.google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handjet:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/2919f68f3c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+          id="leftInfo"
+        >
+          <div>
+            <h1>Busca tu propio Pokemon</h1>
+
+            <div class="row mb-3 mt-3">
+              <label for="pokemonName" class="col-sm-2 col-form-label"
+                >Pokemon</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pokemonName"
+                  placeholder="Ingresa el nombre o ID del Pokémon"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary" id="searchButton">Buscar</button>
+              <br />
+              <a href="#comentarios"
+                ><i class="fa-solid fa-comment"></i> Comentarios</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          id="pokemonInfo"
+          class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+        ></div>
+
+        <div id="paginationMobile">
+          <nav aria-label="Page navigation ">
+            <ul class="pagination justify-content-center">
+              <li onclick="handlePagination(1)" class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li onclick="handlePagination(2)" class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li onclick="handlePagination(3)" class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li onclick="handlePagination(4)" class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li onclick="handlePagination(5)" class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li onclick="handlePagination(6)" class="page-item">
+                <a class="page-link" href="#">6</a>
+              </li>
+              <li onclick="handlePagination(7)" class="page-item">
+                <a class="page-link" href="#">7</a>
+              </li>
+              <li onclick="handlePagination(8)" class="page-item">
+                <a class="page-link" href="#">8</a>
+              </li>
+              <li onclick="handlePagination(9)" class="page-item">
+                <a class="page-link" href="#">9</a>
+              </li>
+              <li onclick="handlePagination(10)" class="page-item">
+                <a class="page-link" href="#">10</a>
+              </li>
+              <li onclick="handlePagination(11)" class="page-item">
+                <a class="page-link" href="#">11</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div id="paginationPC">
+          <nav aria-label="Page navigation ">
+            <ul class="pagination pagination-lg justify-content-center">
+              <li onclick="handlePagination(1)" class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li onclick="handlePagination(2)" class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li onclick="handlePagination(3)" class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li onclick="handlePagination(4)" class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li onclick="handlePagination(5)" class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li onclick="handlePagination(6)" class="page-item">
+                <a class="page-link" href="#">6</a>
+              </li>
+              <li onclick="handlePagination(7)" class="page-item">
+                <a class="page-link" href="#">7</a>
+              </li>
+              <li onclick="handlePagination(8)" class="page-item">
+                <a class="page-link" href="#">8</a>
+              </li>
+              <li onclick="handlePagination(9)" class="page-item">
+                <a class="page-link" href="#">9</a>
+              </li>
+              <li onclick="handlePagination(10)" class="page-item">
+                <a class="page-link" href="#">10</a>
+              </li>
+              <li onclick="handlePagination(11)" class="page-item">
+                <a class="page-link" href="#">11</a>
+              </li>
+              <li onclick="handlePagination(12)" class="page-item">
+                <a class="page-link" href="#">12</a>
+              </li>
+              <li onclick="handlePagination(13)" class="page-item">
+                <a class="page-link" href="#">13</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <div id="spinner" class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <!-- array de pokemones -->
+      <div id="pokeArray" class="row g-4"></div>
+
+      <div class="row">
+        <div id="section_comentarios" class="col-12">
+          <h2 id="comentarios">Comentarios</h2>
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userInput"
+              placeholder="tu_nombre"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="comentario" class="form-label">Comentario</label>
+            <textarea
+              maxlength="50"
+              class="form-control"
+              id="userComment"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <button id="comentarBTN" class="btn btn-outline-danger">
+              Comentar
+            </button>
+          </div>
+        </div>
+        <div class="col-12">
+          <div id="showAllComments" class="miClaseComentarios"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script src="comments.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "usuario": "Bardo",
+    "comentario": "Este es un comentario de Bard.",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "usuario": "Juan",
+    "comentario": "Me gusta este artículo, muy bien escrito.",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "usuario": "María",
+    "comentario": "Un comentario muy interesante.",
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "usuario": "Pedro",
+    "comentario": "¡Gracias por compartir!",
+    "isLiked": false
+  },
+  {
+    "id": 5,
+    "usuario": "Ana",
+    "comentario": "Me ha gustado mucho este artículo.",
+    "isLiked": false
+  },
+  {
+    "id": 6,
+    "usuario": "José",
+    "comentario": "Un comentario muy útil.",
+    "isLiked": false
+  },
+  {
+    "id": 7,
+    "usuario": "Luis",
+    "comentario": "¡Qué buena información!",
+    "isLiked": false
+  },
+  {
+    "id": 8,
+    "usuario": "Carmen",
+    "comentario": "Un comentario muy completo.",
+    "isLiked": false
+  },
+  {
+    "id": 9,
+    "usuario": "David",
+    "comentario": "Muy interesante, gracias por compartir.",
+    "isLiked": false
+  }
+]
